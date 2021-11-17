@@ -1,4 +1,4 @@
-const serverURL = 'https://54.195.21.14:8080';
+const serverURL = 'http://54.195.21.14:8080';
 
 const LogService = {
     saveLog: (log) => {

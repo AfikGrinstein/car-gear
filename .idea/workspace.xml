@@ -111,7 +111,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1637133253072</updated>
-      <workItem from="1637133254319" duration="16169000" />
+      <workItem from="1637133254319" duration="17012000" />
     </task>
     <task id="LOCAL-00001" summary="React with webpack">
       <created>1637143595912</created>
@@ -162,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637151335412</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="move the HTTPS">
+      <created>1637153068531</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1637153068531</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +197,7 @@
     <MESSAGE value="add API integration" />
     <MESSAGE value="fix gear service import" />
     <MESSAGE value="Fix integration + add events UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix integration + add events UI" />
+    <MESSAGE value="move the HTTPS" />
+    <option name="LAST_COMMIT_MESSAGE" value="move the HTTPS" />
   </component>
 </project>
