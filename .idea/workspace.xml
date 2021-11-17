@@ -5,12 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="128541ea-1bf0-4e7a-a7f5-acb921da87b2" name="Changes" comment="React with webpack">
-      <change afterPath="$PROJECT_DIR$/.babelrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/car-gear.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/node_modules/.bin/acorn" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/node_modules/.bin/acorn.cmd" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/node_modules/.bin/ansi-html" afterDir="false" />
@@ -4278,17 +4272,7 @@
       <change afterPath="$PROJECT_DIR$/node_modules/ws/lib/websocket.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/node_modules/ws/package.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/node_modules/ws/wrapper.mjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/App.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Gear/Gear.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Gear/Gear.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fsm-library/fsm-configuration.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fsm-library/fsm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webpack.config.cjs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -4382,8 +4366,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1637133253072</updated>
-      <workItem from="1637133254319" duration="9920000" />
+      <workItem from="1637133254319" duration="10020000" />
     </task>
+    <task id="LOCAL-00001" summary="React with webpack">
+      <created>1637143595912</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1637143595912</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
