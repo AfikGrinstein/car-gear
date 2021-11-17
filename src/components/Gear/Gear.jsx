@@ -5,7 +5,6 @@ import './Gear.css';
 import LogService from "../../services/LogService.jsx";
 
 class Gear extends React.Component {
-    state = {machine: null, currentState: null, logs: []};
 
     constructor(props) {
         super(props);
@@ -40,11 +39,13 @@ class Gear extends React.Component {
                 },
                 stateChanged: this.stateChanged.bind(this)
             }),
-            currentState: 'PARKING'
+            currentState: 'PARKING',
+            logs: []
         };
 
         this.shiftUp = this.shiftUp.bind(this);
         this.shiftDown = this.shiftDown.bind(this);
+        this.deleteAllEvents = this.deleteAllEvents.bind(this);
     }
 
     componentDidMount() {
@@ -52,19 +53,21 @@ class Gear extends React.Component {
     }
 
     render() {
-        return <div data-testid="Gear">
-            <Button variant="outline-primary" onClick={this.shiftUp}>UP</Button>
+        return <div data-testid="Gear" className="gear-container">
+            <Button variant="outline-primary" className="mb-2" onClick={this.shiftUp}>UP</Button>
             <Button variant="outline-primary" onClick={this.shiftDown}>DOWN</Button>
 
-            <div className="mt-4">
-                <span className="form-label">Current state: <span
-                    className="state-text">{this.state.currentState}</span></span>
+            <div className="events">
+                <h3 className="events-title">Events <Button variant="link" onClick={this.deleteAllEvents}>Clear</Button></h3>
+                <ul className="events-list">
+                    {this.state.logs.map(log => <li>{log}</li>)}
+                </ul>
             </div>
-
-            <ul className="mt-5">
-                ({this.state.logs.map(log => <li>{log}</li>)})
-            </ul>
         </div>
+    }
+
+    deleteAllEvents() {
+        LogService.deleteLogs().then(() => this.fetchLogs());
     }
 
     shiftUp() {

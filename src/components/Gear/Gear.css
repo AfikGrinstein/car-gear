@@ -1,4 +1,26 @@
+.gear-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 120px;
+}
+
 .state-text {
     font-weight: bold;
     font-size: 16px;
+}
+
+.events {
+    width: 600px;
+}
+
+.events .events-title {
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.events .events-list {
+    list-style-type: none;
+    margin: 0;
 }
