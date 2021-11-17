@@ -1,3 +1,3 @@
 ## Car Gear FSM
 
-[Demo](https://afikgrinstein.github.io/car-gear/)
+[Demo](http://car-gear-ui.s3-website-eu-west-1.amazonaws.com/)
