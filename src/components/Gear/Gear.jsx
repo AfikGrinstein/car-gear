@@ -2,7 +2,7 @@ import React from 'react';
 import {Button} from 'react-bootstrap';
 import Fsm from "../../fsm-library/fsm.jsx";
 import './Gear.css';
-import LogService from "../../services/LogService";
+import LogService from "../../services/LogService.jsx";
 
 class Gear extends React.Component {
     state = {machine: null, currentState: null, logs: []};
