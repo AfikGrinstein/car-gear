@@ -2,9 +2,10 @@ import React from 'react';
 import {Button} from 'react-bootstrap';
 import Fsm from "../../fsm-library/fsm.jsx";
 import './Gear.css';
+import LogService from "../../services/LogService";
 
 class Gear extends React.Component {
-    state = {machine: null, currentState: null};
+    state = {machine: null, currentState: null, logs: []};
 
     constructor(props) {
         super(props);
@@ -46,14 +47,23 @@ class Gear extends React.Component {
         this.shiftDown = this.shiftDown.bind(this);
     }
 
+    componentDidMount() {
+        this.fetchLogs();
+    }
+
     render() {
         return <div data-testid="Gear">
             <Button variant="outline-primary" onClick={this.shiftUp}>UP</Button>
             <Button variant="outline-primary" onClick={this.shiftDown}>DOWN</Button>
 
             <div className="mt-4">
-                <span className="form-label">Current state: <span className="state-text">{this.state.currentState}</span></span>
+                <span className="form-label">Current state: <span
+                    className="state-text">{this.state.currentState}</span></span>
             </div>
+
+            <ul className="mt-5">
+                ({this.state.logs.map(log => <li>{log}</li>)})
+            </ul>
         </div>
     }
 
@@ -66,8 +76,13 @@ class Gear extends React.Component {
     }
 
     stateChanged(oldState, newState) {
-        console.log('From', oldState, 'to', newState);
+        LogService.saveLog(`State has changed from ${oldState} to ${newState}`)
+            .then(() => this.fetchLogs());
         this.setState({currentState: newState});
+    }
+
+    fetchLogs() {
+        LogService.getLogs().then(logs => this.setState(logs));
     }
 }
 

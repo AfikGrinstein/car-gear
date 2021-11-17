@@ -18,7 +18,12 @@ app.get('/logs', (req, res) => {
 
 app.post('/logs', (req, res) => {
     const log = req.body.log;
-    logs.push(log);
+    logs.push(`[${new Date().toLocaleDateString("en-US", {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    })}] ${log}`);
     res.send();
 });
 
