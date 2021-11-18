@@ -1,6 +1,8 @@
 import React from 'react';
 import {Button} from 'react-bootstrap';
 import Fsm from "../../fsm-library/fsm.jsx";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import './Gear.css';
 import LogService from "../../services/LogService.jsx";
 
@@ -54,11 +56,21 @@ class Gear extends React.Component {
 
     render() {
         return <div data-testid="Gear" className="gear-container">
-            <Button variant="outline-primary" className="mb-2" onClick={this.shiftUp}>UP</Button>
-            <Button variant="outline-primary" onClick={this.shiftDown}>DOWN</Button>
-
+            <div className="gear-shift-container">
+                <div className="transmission-container">
+                    <span className={`transmission p ${this.state.currentState === 'PARKING' ? 'active': ''}`}>P</span>
+                    <span className={`transmission r ${this.state.currentState === 'REVERSE' ? 'active': ''}`}>R</span>
+                    <span className={`transmission n ${this.state.currentState === 'NEUTRAL' ? 'active': ''}`}>N</span>
+                    <span className={`transmission d ${this.state.currentState === 'DRIVE' ? 'active': ''}`}>D</span>
+                </div>
+            <div className="shift-icons-container">
+                <i className="fas fa-caret-up shift-icon fa-7x" onClick={this.shiftUp}></i>
+                <i className="fas fa-caret-down shift-icon fa-7x" onClick={this.shiftDown}></i>
+            </div>
+            </div>
             <div className="events">
-                <h3 className="events-title">Events <Button variant="link" onClick={this.deleteAllEvents}>Clear</Button></h3>
+                <h3 className="events-title">Events <Button variant="link" onClick={this.deleteAllEvents}>Clear</Button>
+                </h3>
                 <ul className="events-list">
                     {this.state.logs.map(log => <li>{log}</li>)}
                 </ul>

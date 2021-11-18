@@ -6,9 +6,55 @@
     margin-top: 120px;
 }
 
-.state-text {
-    font-weight: bold;
-    font-size: 16px;
+.gear-shift-container {
+    display: flex;
+}
+
+.transmission-container {
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+    background-color: black;
+    border-radius: 4px;
+    width: 35px;
+    padding: 10px 0;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transmission {
+    color: gray;
+    font-size: 24px;
+}
+.transmission.p.active {
+    color: red;
+}
+
+.transmission.r.active {
+    color: white;
+}
+
+.transmission.n.active {
+    color: orange;
+}
+
+.transmission.d.active {
+    color: greenyellow;
+}
+
+
+.shift-icons-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+}
+.shift-icons-container .shift-icon {
+    cursor: pointer;
+    color: #0a5380;
+}
+
+.shift-icons-container .shift-icon:hover {
+    color: #063552;
 }
 
 .events {
@@ -24,3 +70,4 @@
     list-style-type: none;
     margin: 0;
 }
+
