@@ -21,7 +21,10 @@ app.post('/logs', (req, res) => {
     logs.push(`[${new Date().toLocaleDateString("en-US", {
         year: 'numeric',
         month: 'long',
-        day: 'numeric'
+        day: 'numeric',
+        hour12: false,
+        hour: '2-digit',
+        minute: '2-digit'        
     })}]: ${log}`);
     res.send();
 });

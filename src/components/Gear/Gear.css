@@ -59,6 +59,7 @@
 
 .events {
     width: 600px;
+    margin-top: 32px;
 }
 
 .events .events-title {

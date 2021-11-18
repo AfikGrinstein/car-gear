@@ -10,6 +10,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --open",
+    "test": "jest",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
@@ -21,9 +22,12 @@
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
+    "babel-jest": "^27.3.1",
     "babel-loader": "^8.2.3",
     "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.3.1",
+    "react-test-renderer": "^17.0.2",
     "webpack": "^5.64.1",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.5.0"
