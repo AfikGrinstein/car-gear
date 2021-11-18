@@ -1,10 +1,15 @@
 import React from 'react';
 import {Button} from 'react-bootstrap';
 import Fsm from "../../fsm-library/fsm.jsx";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import './Gear.css';
 import LogService from "../../services/LogService.jsx";
+
+const TRANSMISSION = {
+    PARKING: 'PARKING',
+    REVERSE: 'REVERSE',
+    NEUTRAL: 'NEUTRAL',
+    DRIVE: 'DRIVE'
+}
 
 class Gear extends React.Component {
 
@@ -12,36 +17,36 @@ class Gear extends React.Component {
         super(props);
         this.state = {
             machine: new Fsm({
-                initialState: 'PARKING',
+                initialState: TRANSMISSION.PARKING,
                 states: {
                     PARKING: {
                         when: {
                             SHIFT_DOWN: () => {
-                                return 'REVERSE';
+                                return TRANSMISSION.REVERSE;
                             }
                         }
                     },
                     REVERSE: {
                         when: {
-                            SHIFT_DOWN: () => 'NEUTRAL',
-                            SHIFT_UP: () => 'PARKING'
+                            SHIFT_DOWN: () => TRANSMISSION.NEUTRAL,
+                            SHIFT_UP: () => TRANSMISSION.PARKING
                         }
                     },
                     NEUTRAL: {
                         when: {
-                            SHIFT_DOWN: () => 'DRIVE',
-                            SHIFT_UP: () => 'REVERSE'
+                            SHIFT_DOWN: () => TRANSMISSION.DRIVE,
+                            SHIFT_UP: () => TRANSMISSION.REVERSE
                         }
                     },
                     DRIVE: {
                         when: {
-                            SHIFT_UP: () => 'NEUTRAL'
+                            SHIFT_UP: () => TRANSMISSION.NEUTRAL
                         }
                     }
                 },
                 stateChanged: this.stateChanged.bind(this)
             }),
-            currentState: 'PARKING',
+            currentState: TRANSMISSION.PARKING,
             logs: []
         };
 
@@ -58,15 +63,19 @@ class Gear extends React.Component {
         return <div data-testid="Gear" className="gear-container">
             <div className="gear-shift-container">
                 <div className="transmission-container">
-                    <span className={`transmission p ${this.state.currentState === 'PARKING' ? 'active': ''}`}>P</span>
-                    <span className={`transmission r ${this.state.currentState === 'REVERSE' ? 'active': ''}`}>R</span>
-                    <span className={`transmission n ${this.state.currentState === 'NEUTRAL' ? 'active': ''}`}>N</span>
-                    <span className={`transmission d ${this.state.currentState === 'DRIVE' ? 'active': ''}`}>D</span>
+                    <span
+                        className={`transmission p ${this.state.currentState === TRANSMISSION.PARKING ? 'active' : ''}`}>P</span>
+                    <span
+                        className={`transmission r ${this.state.currentState === TRANSMISSION.REVERSE ? 'active' : ''}`}>R</span>
+                    <span
+                        className={`transmission n ${this.state.currentState === TRANSMISSION.NEUTRAL ? 'active' : ''}`}>N</span>
+                    <span
+                        className={`transmission d ${this.state.currentState === TRANSMISSION.DRIVE ? 'active' : ''}`}>D</span>
                 </div>
-            <div className="shift-icons-container">
-                <i className="fas fa-caret-up shift-icon fa-7x" onClick={this.shiftUp}></i>
-                <i className="fas fa-caret-down shift-icon fa-7x" onClick={this.shiftDown}></i>
-            </div>
+                <div className="shift-icons-container">
+                    <i className="fas fa-caret-up shift-icon fa-7x" onClick={this.shiftUp}></i>
+                    <i className="fas fa-caret-down shift-icon fa-7x" onClick={this.shiftDown}></i>
+                </div>
             </div>
             <div className="events">
                 <h3 className="events-title">Events <Button variant="link" onClick={this.deleteAllEvents}>Clear</Button>
